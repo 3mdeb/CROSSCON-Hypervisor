@@ -85,6 +85,14 @@ struct config config = {
                         .size = 0x10000,
                         .interrupt_num = 1,
                         .interrupts = (irqid_t[]) {38}
+                    },
+                    {
+                        /* Wired Network Device */
+                        .pa = 0x7d580000, // Physical address of the genet device
+                        .va = 0x7d580000, // Virtual address for the VM
+                        .size = 0x10000,  // Size of the device memory region
+                        .interrupt_num = 2,
+                        .interrupts = (irqid_t[]) {157, 158} // Interrupts for the network device
                     }
                 },
 
@@ -145,6 +153,14 @@ struct config config = {
                         .size = 0x10000,
                         .interrupt_num = 1,
                         .interrupts = (irqid_t[]) {39}
+                    },
+                    {
+                        /* Wired Network Device */
+                        .pa = 0x7d580000, // Physical address of the genet device
+                        .va = 0x7d580000, // Virtual address for the VM
+                        .size = 0x10000,  // Size of the device memory region
+                        .interrupt_num = 2,
+                        .interrupts = (irqid_t[]) {157, 158} // Interrupts for the network device
                     },
                     {
                         /* Timer interrupt */
