@@ -38,5 +38,10 @@ struct platform_desc platform = {
             .gicv_addr = 0xff846000,
             .maintenance_id = 25
         },
+        .generic_timer = {
+            .irqs = {
+                .virtual = 27
+            }
+        },
     }
 };
