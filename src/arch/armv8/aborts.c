@@ -56,6 +56,9 @@ void aborts_data_lower(uint64_t iss, uint64_t far, uint64_t il)
 
     vaddr_t addr = far;
     emul_handler_t handler = vm_emul_get_mem(cpu.vcpu->vm, addr);
+    if (addr <= 0xff000000) {
+        printk("CROSSCONHYP DATA ABORT: 0x%x\n", addr);
+    }
     if (handler != NULL) {
         struct emul_access emul;
         emul.addr = addr;
